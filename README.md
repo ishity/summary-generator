@@ -1,5 +1,8 @@
 # 要約ジェネレーター / Summary Generator
 
+https://github.com/ishity/summary-generator/assets/88872183/7b55d381-9f43-4f16-afdb-ef776a1044be
+
+
 - フロントエンド：Vue.js
 - バックエンド：Node.js
 - API：GPT API
@@ -13,8 +16,3 @@
 1. git cloneする
 2. backend/で ```node server.js``` を行う。「Server is running on port 5000」が出たら成功。
 3. summary-generator/で ```npm run serve``` を行う。「Compiled successfully」が出たら成功。 
-
-
-https://github.com/ishity/summary-generator/assets/88872183/e2580d24-0246-4e6b-aa2a-7a486bb284a3
-
-
