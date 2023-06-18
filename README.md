@@ -1,7 +1,6 @@
 # 要約ジェネレーター / Summary Generator
 
-https://github.com/ishity/summary-generator/assets/88872183/7b55d381-9f43-4f16-afdb-ef776a1044be
-
+https://github.com/ishity/summary-generator/assets/88872183/9efb8590-0ad5-4578-b87a-ab6242e0cf31
 
 - フロントエンド：Vue.js
 - バックエンド：Node.js
