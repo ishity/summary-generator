@@ -19,8 +19,8 @@ router.post('/', async (req, res) => {
             OPENAI_API_URL,
             {
                 model: 'text-davinci-003',
-                prompt: text + ' 以上の文章を要約してください。',
-                max_tokens: 60,
+                prompt: text + ' 以上の文章をキリのいい形に要約してください。',
+                max_tokens: 500,
             },
             {
                 headers: {
