@@ -10,58 +10,64 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <main>
-    <div id="app">
-    <input v-model="text" placeholder="文章を入力してください。" />
-    <button @click="summarize">Summarize</button>
-    <div v-if="summary" class="summary-sentence">
-      <h2>Summary</h2>
-      <p>{{ summary }}</p>
-    </div>
+    <div id="app" class="right-content">
+      <div class="right-top">
+        <textarea v-model="text" placeholder="文章を入力してください。" />
+        <button @click="summarize">要約する</button>
+        <div class="summarized">
+          <h3>要約は下記の通りです。</h3>
+          <p>{{ summary }}</p>
+        </div>
+      </div>
   </div>
   </main>
 </template>
-
-
 
 <style scoped>
 header {
   line-height: 1.5;
 }
-input {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
+.right-content{
+  display:flex;
+  flex-flow: column;
+  text-align: center;
 }
-button {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-  margin-bottom: 1rem;
+button{
   background-color: #4CAF50;
+  border: none;
   color: white;
+  padding: 10px 40px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 3%;
 }
-.summary-sentence{
-  background-color: #4caf4f20;
+textarea{
+  width: 500px;
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+  margin-bottom: 10px;
+}
+.summarized{
+  background-color: rgb(232, 232, 232);
+  color: #000;
+  padding: 10px;
+  margin: 50px 0px;
+}
+.summarized h3{
+  padding: 10px 0px;
 }
 
-  main {
-    margin: 50px 0px;  
-  }
 @media (min-width: 1024px) {
   header {
-    display: flex;
+    display: flex; 
     place-items: center;
     padding-right: calc(var(--section-gap) / 2);
   }
   header .wrapper {
-    display: flex;
+    display: flex; 
     place-items: flex-start;
     flex-wrap: wrap;
   }
@@ -75,18 +81,20 @@ export default {
   data() {
     return {
       text: "",
-      summary: "",
+      summary: ""
     };
   },
   methods: {
     summarize() {
       axios
-        .post("/api/summarize", { text: this.text}).then(res => {
+      .post('http://localhost:5000/api/summarize', { text: this.text })
+        .then(res => {
           this.summary = res.data.summary;
-        }).catch(err => {
-          console.log(err);
+        })
+        .catch(err => {
+          console.error(err);
         });
     }
   }
-}
+};
 </script>

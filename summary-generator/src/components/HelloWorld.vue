@@ -11,7 +11,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      このアプリは、入力された文章を要約するアプリです。
+      好きな文章を入力して、要約を出力しよう。
     </h3>
   </div>
 </template>
